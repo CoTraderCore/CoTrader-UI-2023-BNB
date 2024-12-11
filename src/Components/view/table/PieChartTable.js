@@ -44,7 +44,7 @@ function PieChartTable({fundData}) {
             (
               <Tbody style={{ color: "grey",}} fontSize={{base:"12px",sm:"14px",md:"auto"}} >
                 {
-                  fundData.balance.slice().sort(function (a, b) {
+                  Array.isArray(fundData.balance) && fundData.balance.slice().sort(function (a, b) {
                     return Number(b.percentInETH) - Number(a.percentInETH)
                   }).map((item, key) => {
                     if (item["percentInETH"] > 0) {

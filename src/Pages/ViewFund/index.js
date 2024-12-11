@@ -468,7 +468,7 @@ function ViewFund(props) {
                                                                     (
                                                                         <Tbody style={{ "color": "grey" }} >
                                                                             {
-                                                                                balance.slice().sort(function (a, b) {
+                                                                                Array.isArray(balance) && balance.slice().sort(function (a, b) {
                                                                                     return Number(b.percentInETH) - Number(a.percentInETH)
                                                                                 }).map((item, key) => {
                                                                                     if (item["percentInETH"] > 0) {

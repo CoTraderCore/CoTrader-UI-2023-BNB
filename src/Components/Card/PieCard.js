@@ -51,7 +51,7 @@ function PieCard(props) {
                 mx='auto'>
                 <Flex direction={{ base: "row",sm:"row", md: "row" }} justifyContent={'center'} py='5px' me='10px'>
                     {
-                        fundData.balance.slice().sort(function (a, b) {
+                        Array.isArray(fundData.balance) && fundData.balance.slice().sort(function (a, b) {
                             return Number(b.percentInETH) - Number(a.percentInETH)
                         }).map((item, key) => {
                             if (item["percentInETH"] > 0) {
